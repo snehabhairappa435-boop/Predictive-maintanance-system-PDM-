@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+    .profile-container {
+        max-width: 750px;
+        margin: 40px auto;
+        padding: 30px;
+        border-radius: 18px;
+        background: #1e1e1e;
+        box-shadow: 0px 6px 25px rgba(0,0,0,0.35);
+        animation: fadeIn 0.5s ease;
+        color: white;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .profile-header {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .profile-header h2 {
+        color: #4aa3ff;
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    .profile-icon {
+        font-size: 55px;
+        color: #4aa3ff;
+        margin-bottom: 10px;
+    }
+
+    .info-row {
+        margin-bottom: 15px;
+        padding: 12px 18px;
+        background: #2c2c2c;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        border-left: 4px solid #4aa3ff;
+    }
+
+    .label {
+        font-weight: 600;
+        color: #ccc;
+    }
+
+    .value {
+        color: #fff;
+        font-weight: 500;
+    }
+
+    .edit-btn {
+        display: block;
+        margin: 25px auto 0;
+        padding: 12px 22px;
+        background: #1e90ff;
+        color: white;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.2s;
+        width: 220px;
+        text-align: center;
+    }
+
+    .edit-btn:hover {
+        background: #0b65c6;
+    }
+</style>
+
+
+<div class="profile-container">
+
+    <div class="profile-header">
+        <div class="profile-icon">👤</div>
+        <h2>User Profile</h2>
+    </div>
+
+    <div class="info-row">
+        <div class="label">Name</div>
+        <div class="value">{{ user.name }}</div>
+    </div>
+
+    <div class="info-row">
+        <div class="label">Email</div>
+        <div class="value">{{ user.email }}</div>
+    </div>
+
+    <div class="info-row">
+        <div class="label">Phone</div>
+        <div class="value">{{ user.phone }}</div>
+    </div>
+
+    <div class="info-row">
+        <div class="label">Department</div>
+        <div class="value">{{ user.department }}</div>
+    </div>
+
+    <div class="info-row">
+        <div class="label">Role</div>
+        <div class="value">{{ user.role }}</div>
+    </div>
+
+    <div class="info-row">
+        <div class="label">Joined On</div>
+        <div class="value">{{ user.created_at }}</div>
+    </div>
+
+    <!-- 🔥 FIXED: Now it actually redirects to edit profile page -->
+    <a href="/edit-profile" class="edit-btn">Edit Profile</a>
+
+</div>
+
+{% endblock %}

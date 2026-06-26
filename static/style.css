@@ -1,0 +1,146 @@
+/* Global */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #eef2f3;
+}
+
+/* Navbar */
+.navbar {
+    background: #1e1e1e;
+    padding: 15px;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* Center layout for login/signup */
+.center-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+}
+
+/* Website branding */
+.brand-box {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.brand-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1e90ff;
+    letter-spacing: 1px;
+}
+
+.brand-subtitle {
+    font-size: 14px;
+    color: #555;
+    margin-top: -10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Login/Signup card */
+.auth-card {
+    background: white;
+    padding: 35px;
+    width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.auth-card h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+/* Buttons */
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #0b65c6;
+}
+
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    margin-top: 20px;
+}
+
+/* Left Sidebar */
+.sidebar {
+    width: 250px;
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.sidebar-title {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.side-link {
+    display: block;
+    padding: 12px 10px;
+    margin-bottom: 10px;
+    background: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.side-link:hover {
+    background: #444;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    background: #f5f7fa;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.page-title {
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #222;
+}
+

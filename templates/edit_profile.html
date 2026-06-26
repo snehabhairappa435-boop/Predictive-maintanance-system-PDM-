@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+    .edit-container {
+        max-width: 750px;
+        margin: 40px auto;
+        padding: 30px;
+        border-radius: 18px;
+        background: #ffffff;
+        box-shadow: 0px 6px 18px rgba(0,0,0,0.08);
+        animation: fadeIn 0.6s ease;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .edit-header {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .edit-header h2 {
+        color: #2b7cff;
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+    label {
+        font-weight: 600;
+        color: #333;
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid #d4d9e6;
+        background: #f6f7fb;
+        font-size: 15px;
+        transition: 0.2s;
+    }
+
+    input:focus, select:focus {
+        border-color: #2b7cff;
+        background: #eef3ff;
+        outline: none;
+    }
+
+    .btn-container {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .save-btn {
+        padding: 12px 30px;
+        background: #2b7cff;
+        color: white;
+        border-radius: 8px;
+        border: none;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .save-btn:hover {
+        background: #1f5ed1;
+    }
+
+    .cancel-btn {
+        display: inline-block;
+        margin-top: 12px;
+        color: #2b7cff;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .cancel-btn:hover {
+        text-decoration: underline;
+    }
+</style>
+
+
+<div class="edit-container">
+
+    <div class="edit-header">
+        <h2>Edit Profile</h2>
+    </div>
+
+    <form method="POST">
+
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" value="{{ user.name }}" required>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" value="{{ user.email }}" required>
+        </div>
+
+        <div class="form-group">
+            <label>Phone</label>
+            <input type="text" name="phone" value="{{ user.phone }}">
+        </div>
+
+        <div class="form-group">
+            <label>Department</label>
+            <input type="text" name="department" value="{{ user.department }}">
+        </div>
+
+        <div class="form-group">
+            <label>Role</label>
+            <select name="role">
+                <option value="User" {% if user.role == "User" %}selected{% endif %}>User</option>
+                <option value="Engineer" {% if user.role == "Engineer" %}selected{% endif %}>Engineer</option>
+                <option value="Manager" {% if user.role == "Manager" %}selected{% endif %}>Manager</option>
+                <option value="Admin" {% if user.role == "Admin" %}selected{% endif %}>Admin</option>
+            </select>
+        </div>
+
+        <div class="btn-container">
+            <button type="submit" class="save-btn">Save Changes</button>
+            <br>
+            <a href="/profile" class="cancel-btn">Cancel</a>
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

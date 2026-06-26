@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+    .auth-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 88vh;
+    }
+
+    .brand-title {
+        font-size: 32px;
+        font-weight: 700;
+        color: #4aa3ff;
+        margin-bottom: 5px;
+    }
+
+    .brand-subtitle {
+        font-size: 14px;
+        color: #aaa;
+        margin-bottom: 25px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .auth-card {
+        background: #1e1e1e;
+        padding: 35px;
+        width: 360px;
+        border-radius: 15px;
+        box-shadow: 0px 8px 25px rgba(0,0,0,0.45);
+        text-align: center;
+        animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(15px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .auth-card h2 {
+        color: #4aa3ff;
+        margin-bottom: 18px;
+        font-size: 26px;
+    }
+
+    .auth-card input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        border: none;
+        background: #2c2c2c;
+        color: white;
+        font-size: 15px;
+    }
+
+    .auth-card input::placeholder {
+        color: #aaa;
+    }
+
+    .btn-submit {
+        width: 100%;
+        padding: 12px;
+        background: #1e90ff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 8px;
+        transition: 0.2s;
+    }
+
+    .btn-submit:hover {
+        background: #0b65c6;
+    }
+
+    .error {
+        color: #ff4d4d;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .signup-link {
+        margin-top: 12px;
+        color: #ccc;
+    }
+
+    .signup-link a {
+        color: #4aa3ff;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .signup-link a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+
+<div class="auth-wrapper">
+
+    <h1 class="brand-title">Predictive Maintenance System</h1>
+    <p class="brand-subtitle">Machine Health Monitoring</p>
+
+    <div class="auth-card">
+        <h2>Login</h2>
+
+        <form method="POST">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+
+            <button class="btn-submit" type="submit">Login</button>
+        </form>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <p class="signup-link">
+            Don't have an account?
+            <a href="/signup">Create an account</a>
+        </p>
+    </div>
+
+</div>
+
+{% endblock %}

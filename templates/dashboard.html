@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="title">Predictive Maintenance Dashboard</h2>
+
+
+
+<!-- Streamlit app inside iframe -->
+<iframe
+    src="http://localhost:8501/?embed=true"
+    width="100%"
+    height="2000"
+    style="border:none;border-radius:10px;">
+</iframe>
+
+{% endblock %}

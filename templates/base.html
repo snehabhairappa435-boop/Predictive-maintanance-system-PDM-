@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predictive Maintenance System</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+{% if session.get("user") %}
+<div class="navbar">
+    <a href="/dashboard">Dashboard</a>
+    <a href="/profile">Profile</a>
+    <a href="/logout">Logout</a>
+</div>
+{% endif %}
+
+<div class="content">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>
