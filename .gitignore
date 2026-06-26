@@ -4,13 +4,8 @@ __pycache__/
 
 .streamlit/secrets.toml
 
-uploads/
+models/pdm_random_forest.pkl
+models/pdm_ann_model.keras
+models/pdm_scaler.pkl
 
 *.log
-
-.idea/
-.vscode/
-
-.env
-
-*.db-journal
